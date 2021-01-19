@@ -50,8 +50,15 @@ public class Utils {
 
     public static String createURL(String apiName) {
         if (apiName.toLowerCase().startsWith("latest")) {
-            return RATE_API + "/latest";
+            return RATE_API + "latest";
         }
-        return "invalid service";
+        return "invalid url";
+    }
+
+    public static String createURL(String apiName, String date) {
+        if (apiName.toLowerCase().startsWith("date")) {
+            return RATE_API + date;
+        }
+        return "invalid url";
     }
 }
